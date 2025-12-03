@@ -11,15 +11,50 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DUANMAU">
+
+        <!-- LoginActivity là màn hình đầu tiên -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Splash nếu có -->
+        <activity android:name=".ui.ChaoActivity" android:exported="false"/>
+
+        <!-- Các màn hình edit -->
+        <activity android:name=".ui.EditKhachHangActivity" android:exported="false"/>
+        <activity android:name=".ui.EditDanhMucActivity" android:exported="false"/>
+        <activity android:name=".ui.EditNhanVienActivity" android:exported="false"/>
+        <activity android:name=".ui.EditSanPhamActivity" android:exported="false"/>
+
+        <!-- Các màn hình quản lý -->
+        <activity android:name=".ui.QuanLyKhachHangActivity" android:exported="false"/>
+        <activity android:name=".ui.QuanLyDanhMucActivity" android:exported="false"/>
+        <activity android:name=".ui.QuanLySanPhamActivity" android:exported="false"/>
+        <activity android:name=".ui.QuanLyNhanVienActivity" android:exported="false"/>
+        <activity android:name=".ui.QuanLyHoaDonActivity" android:exported="false"/>
+
+        <!-- Màn hình chờ -->
+        <activity android:name=".ui.GioHangActivity" android:exported="false"/>
+
+        <!-- Thống kê -->
+        <activity android:name=".ui.ThongKeDoanhThuActivity" android:exported="false"/>
+        <activity android:name=".ui.ThongKeSanPhamActivity" android:exported="false"/>
+        <activity android:name=".ui.ThongKeKhachHangActivity" android:exported="false"/>
+
+        <!-- Đổi mật khẩu -->
+        <activity android:name=".ui.DoiMatKhauActivity" android:exported="false"/>
+
+        <!-- Màn hình chính -->
+        <activity android:name=".ui.MainActivity" android:exported="false"/>
+
+        <!-- HDCT -->
+        <activity android:name=".ui.HDCTActivity" android:exported="false"/>
+
     </application>
 
 </manifest>
