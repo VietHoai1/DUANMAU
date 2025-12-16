@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -39,7 +40,7 @@ public class ThongKeDoanhThuActivity extends AppCompatActivity {
             String ngayBatDau = edtNgayBatDau.getText().toString().trim();
             String ngayKetThuc = edtNgayKetThuc.getText().toString().trim();
             if (ngayBatDau.isEmpty() || ngayKetThuc.isEmpty()) {
-                tvDoanhThu.setText("Vui lòng nhập đầy đủ ngày bắt đầu và ngày kết thúc.");
+                Toast.makeText(this, "Vui lòng nhập đầy đủ ngày bắt đầu và ngày kết thúc", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -63,10 +64,13 @@ public class ThongKeDoanhThuActivity extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
                 (view, selectedYear, selectedMonth, selectedDay) -> {
-//                    String selectedDate = selectedYear
-//                            + "-" + String.format("%02d", selectedMonth + 1)
-//                            + "-" + String.format("%02d", selectedDay);
-                    String selectedDate = String.format("%02d/%02d/%04d", selectedDay, selectedMonth, selectedYear);
+                    // Month is 0-indexed, so we need to add 1
+                    String selectedDate = String.format(
+                            "%04d-%02d-%02d",
+                            selectedYear,
+                            selectedMonth + 1,
+                            selectedDay
+                    );
                     editText.setText(selectedDate);
                 },
                 year, month, day
